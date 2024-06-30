@@ -1,0 +1,22 @@
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Install PHP
+  apt:
+    name:
+      - php-fpm
+      - php-mysql
+    state: present
+
+- name: Copy PHP file
+  template:
+    src: index.php.j2
+    dest: /var/www/html/index.php
+    mode: '0644'
+    - name: Clone application repository
+  git:
+    repo: https://github.com/errifaianass/my-app.git
+    dest: /var/www/html/my-app
+    version: master

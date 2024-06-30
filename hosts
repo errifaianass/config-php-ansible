@@ -1,0 +1,8 @@
+[production]
+prod-web-01
+prod-web-02
+prod-db-01
+
+[staging]
+stage-web-01
+stage-db-01
